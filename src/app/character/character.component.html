@@ -9,5 +9,6 @@
         <p class="card-text"><b>Origin:</b> {{character.origin.name}}</p>
         <p class="card-text"><b>Location:</b> {{character.location.name}}</p>
         <p class="card-text"><b>Url:</b> {{character.url}}</p>
-        <p class="card-text"><b>Created:</b> {{character.created}}</p>
+        <p class="card-text"><b>Created:</b> {{ character.created | date:'medium' }}</p>
+        
     </div>
