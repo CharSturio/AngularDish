@@ -1,5 +1,13 @@
-<img src="..." class="card-img-top" alt="...">
+<img src="{{character.image}}" class="card-img-top" alt="...">
     <div class="card-body">
-        <h5 class="card-title">Card title</h5>
-        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+        <h5 class="card-title">{{character.name}}</h5>
+        <p class="card-text"><b>ID:</b> {{character.id}}</p>
+        <p class="card-text"><b>status:</b> {{character.status}}</p>
+        <p class="card-text"><b>species:</b> {{character.species}}</p>
+        <p class="card-text"><b>Type:</b> {{character.type}}</p>
+        <p class="card-text"><b>Gender:</b> {{character.gender}}</p>
+        <p class="card-text"><b>Origin:</b> {{character.origin.name}}</p>
+        <p class="card-text"><b>Location:</b> {{character.location.name}}</p>
+        <p class="card-text"><b>Url:</b> {{character.url}}</p>
+        <p class="card-text"><b>Created:</b> {{character.created}}</p>
     </div>

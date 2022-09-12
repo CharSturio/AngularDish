@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { ServiceService } from "../services/service.service";
 import { Character } from '../model/character';
 
-let ListCharacter = new Array<Character>;
 
 @Component({
   selector: 'app-character-list',
@@ -10,6 +9,7 @@ let ListCharacter = new Array<Character>;
   styleUrls: ['./character-list.component.css']
 })
 export class CharacterListComponent implements OnInit {
+  ListCharacter = new Array<Character>;
 
   constructor(private serviceService: ServiceService) { }
 
@@ -19,8 +19,7 @@ export class CharacterListComponent implements OnInit {
 
   getCharacterService(){
     this.serviceService.getCharacter().subscribe(resp => {
-      ListCharacter = resp;
-      console.log(resp);
+      this.ListCharacter = resp;
     });
 
   }
