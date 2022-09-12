@@ -1,4 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { ServiceService } from "../services/service.service";
+import { Character } from '../model/character';
+
+let ListCharacter = new Array<Character>;
 
 @Component({
   selector: 'app-character-list',
@@ -7,9 +11,21 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CharacterListComponent implements OnInit {
 
-  constructor() { }
+  constructor(private serviceService: ServiceService) { }
 
   ngOnInit(): void {
+    this.getCharacterService();
   }
+
+  getCharacterService(){
+    this.serviceService.getCharacter().subscribe(resp => {
+      ListCharacter = resp;
+      console.log(resp);
+    });
+
+  }
+
+
+
 
 }
